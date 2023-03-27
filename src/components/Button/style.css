@@ -1,0 +1,48 @@
+.btn {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem 2.5rem;
+    border-radius: 1rem;
+    transition: .25s;
+}
+
+.small-btn {
+    display: flex;
+    align-items: center;
+    padding: .5rem 1.5rem;
+    border-radius: .6rem;
+    transition: .25s;
+}
+
+.grn-btn {
+    background-color: var(--secondary-color);
+    color: var(--container-color);
+}
+
+.orng-btn {
+    background-color: var(--third-color);
+    color: var(--container-color);
+}
+
+.blu-btn {
+    background-color: var(--main-color);
+    color: var(--container-color);
+}
+
+.outlined-grn-btn {
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    background: none;
+}
+
+.outlined-orng-btn {
+    border: 1px solid var(--third-color);
+    color: var(--third-color);
+    background: none;
+}
+
+.outlined-blu-btn {
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+    background: none;
+}
