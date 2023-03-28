@@ -57,12 +57,12 @@ const Header = (): ReactElement => {
               </Link>
             </li>
             <li className="nav__item">
-              <Link to="/" className="nav__link">
+              <Link to="/login" className="nav__link">
                 <Button classes="small-btn outlined-grn-btn" title="Sign in" />
               </Link>
             </li>
             <li className="nav__item">
-              <Link to="/" className="nav__link">
+              <Link to="/signup" className="nav__link">
                 <Button classes="small-btn orng-btn" title="Sign up" />
               </Link>
             </li>
