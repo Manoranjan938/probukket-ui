@@ -6,6 +6,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import ErrorPage from "../pages/Error/ErrorPage";
+import Login from "../pages/Login/Login";
 import Main from "../pages/Main/Main";
 import Root from "./Root";
 
@@ -14,6 +15,7 @@ const Routers = (): ReactElement => {
     createRoutesFromElements(
       <Route path="/" element={<Root />} errorElement={<ErrorPage />}>
         <Route index element={<Main />} />
+        <Route path="login" element={<Login />} />
       </Route>,
     ),
   );
