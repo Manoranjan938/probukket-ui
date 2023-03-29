@@ -1,14 +1,15 @@
-import React, { type ReactElement } from "react";
+import { type ReactElement } from "react";
 import { FiMail } from "react-icons/fi";
 import { CiLock } from "react-icons/ci";
 
 import "./style.css";
 import Button from "../../components/Button";
+import { Link } from "react-router-dom";
 
 const Login = (): ReactElement => {
   return (
-    <section className="login_section">
-      <div className="login_title">
+    <section className="form_section">
+      <div className="form_title">
         <h2>Welcome back!</h2>
       </div>
       <form className="login_form">
@@ -33,6 +34,9 @@ const Login = (): ReactElement => {
         <div className="input-group">
           <Button title="Login" classes="btn blu-btn w-100" />
         </div>
+        <Link to="/forgot" className="link">
+          Forgot Password
+        </Link>
       </form>
     </section>
   );

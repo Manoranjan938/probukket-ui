@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Login from "../../../pages/Login/Login";
+import Login from "../../../pages/Login";
 
 describe("Test the login Page", () => {
   test("render the login with a button", async () => {
