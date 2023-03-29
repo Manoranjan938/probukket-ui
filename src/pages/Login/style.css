@@ -1,4 +1,4 @@
-.login_section {
+.form_section {
     width: 500px;
     height: auto;
     position: absolute;
@@ -11,7 +11,7 @@
     box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.2);
 }
 
-.login_title {
+.form_title {
     height: 80px;
     display: flex;
     justify-content: center;

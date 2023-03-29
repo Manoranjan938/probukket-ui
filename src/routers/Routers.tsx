@@ -6,8 +6,10 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import ErrorPage from "../pages/Error/ErrorPage";
-import Login from "../pages/Login/Login";
+import Forgot from "../pages/Forgot";
+import Login from "../pages/Login";
 import Main from "../pages/Main/Main";
+import Signup from "../pages/Signup";
 import Root from "./Root";
 
 const Routers = (): ReactElement => {
@@ -16,6 +18,8 @@ const Routers = (): ReactElement => {
       <Route path="/" element={<Root />} errorElement={<ErrorPage />}>
         <Route index element={<Main />} />
         <Route path="login" element={<Login />} />
+        <Route path="signup" element={<Signup />} />
+        <Route path="forgot" element={<Forgot />} />
       </Route>,
     ),
   );
