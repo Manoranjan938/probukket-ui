@@ -1,8 +1,9 @@
 .alert-wrapper {
     position: fixed;
-    top: 10px;
+    top: 5rem;
     right: 10px;
     width: 300px;
+    z-index: 1000;
 }
 
 .alert-item {
@@ -13,7 +14,6 @@
     animation: SlideLeft 0.4s;
     animation-fill-mode: forwards;
     width: 300px;
-    z-index: 1000;
 }
 
 @keyframes SlideLeft {
@@ -47,7 +47,7 @@
 }
 
 .alert-item .bar {
-    height: 10px;
+    height: 5px;
 }
 
 .alert-item.success .bar {
