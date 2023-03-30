@@ -1,0 +1,7 @@
+version: "3"
+services:
+  frontend:
+    container_name: probukketapp
+    build: .
+    ports:
+      - 3003:80
