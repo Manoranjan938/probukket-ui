@@ -1,3 +1,24 @@
+.form_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo>img {
+    width: 80px;
+    height: 80px;
+}
+
+.header-btn {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
 .form_section {
     width: 500px;
     height: auto;
