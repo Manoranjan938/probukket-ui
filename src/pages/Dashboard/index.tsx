@@ -2,6 +2,8 @@ import { type ReactNode, type ReactElement } from "react";
 import Sidebar from "./components/Sidebar";
 import DashboardHeader from "./components/Header";
 
+import "./style.css";
+
 interface DashboardProps {
   children: ReactNode;
 }
