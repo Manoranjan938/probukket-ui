@@ -6,11 +6,11 @@ import {
   RouterProvider,
   Routes,
 } from "react-router-dom";
-import ErrorPage from "../pages/Error/ErrorPage";
-import Forgot from "../pages/Forgot";
-import Login from "../pages/Login";
-import Main from "../pages/Main/Main";
-import Signup from "../pages/Signup";
+import ErrorPage from "src/pages/Error/ErrorPage";
+import Forgot from "src/pages/Forgot";
+import Login from "src/pages/Login";
+import Main from "src/pages/Main/Main";
+import Signup from "src/pages/Signup";
 import Root from "./Root";
 import Dashboard from "src/pages/Dashboard";
 import Home from "src/pages/Dashboard/components/Main";
