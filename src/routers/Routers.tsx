@@ -13,7 +13,7 @@ import Main from "src/pages/Main/Main";
 import Signup from "src/pages/Signup";
 import Root from "./Root";
 import Dashboard from "src/pages/Dashboard";
-import Home from "src/pages/Dashboard/pages/Main";
+import Home from "src/pages/Dashboard/components/Main";
 
 const Routers = (): ReactElement => {
   const router = createBrowserRouter(
