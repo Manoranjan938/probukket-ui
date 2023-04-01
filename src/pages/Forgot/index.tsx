@@ -18,7 +18,9 @@ const Forgot = (): ReactElement => {
         </div>
         <div className="header-btn">
           <span>Don&apos;t have account</span>
-          <Button title="Sign up" classes="small-btn blu-btn" />
+          <Link to="/signup">
+            <Button title="Sign up" classes="small-btn blu-btn" />
+          </Link>
         </div>
       </div>
       <section className="form_section">
