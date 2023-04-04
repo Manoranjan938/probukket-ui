@@ -65,7 +65,7 @@ const Signup = (): ReactElement => {
           <div className="input-group">
             <Button title="Play with us" classes="btn blu-btn w-100" />
           </div>
-          <Link to="/login" className="link">
+          <Link to="/login" className="redirect-link">
             Signin
           </Link>
         </form>
