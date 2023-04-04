@@ -56,7 +56,7 @@ const Login = (): ReactElement => {
           <div className="input-group">
             <Button title="Login" classes="btn blu-btn w-100" />
           </div>
-          <Link to="/forgot" className="link">
+          <Link to="/forgot" className="redirect-link">
             Forgot Password
           </Link>
         </form>
