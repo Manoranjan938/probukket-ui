@@ -40,7 +40,7 @@ const Forgot = (): ReactElement => {
           <div className="input-group">
             <Button title="Send me the link" classes="btn blu-btn w-100" />
           </div>
-          <Link to="/login" className="link">
+          <Link to="/login" className="redirect-link">
             Sign in
           </Link>
         </form>
