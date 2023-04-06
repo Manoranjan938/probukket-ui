@@ -138,3 +138,27 @@
     background-color: var(--third-color);
     color: var(--container-color);
 }
+
+.dashborad_header_container {
+    width: 100%;
+    height: 60px;
+    background: var(--container-color);
+    padding: 0 2rem 0 .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: .5rem;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.header_left {
+    display: flex;
+    align-items: center;
+}
+
+.header_icon {
+    font-size: 24px;
+    color: var(--deep-gray-color);
+    margin: 0 6px;
+    cursor: pointer;
+}
