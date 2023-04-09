@@ -1,4 +1,4 @@
-import { type ReactElement } from "react";
+import { type ReactElement, useState } from "react";
 import { FiMail, FiUser } from "react-icons/fi";
 import { CiLock } from "react-icons/ci";
 
@@ -6,8 +6,23 @@ import Button from "../../components/Button";
 import { Link } from "react-router-dom";
 
 import img from "src/assets/logo.png";
+import { HiOutlinePaperAirplane } from "react-icons/hi";
 
 const Signup = (): ReactElement => {
+  const [isSending, setIsSending] = useState(false);
+  const [isSent, setIsSent] = useState(false);
+
+  const handleClick = (): void => {
+    setIsSending(true);
+    setTimeout(() => {
+      setIsSending(false);
+      setIsSent(true);
+      setTimeout((): void => {
+        setIsSent(false);
+      }, 2500);
+    }, 2000);
+  };
+
   return (
     <>
       <div className="form_header container">
@@ -63,7 +78,19 @@ const Signup = (): ReactElement => {
             </div>
           </div>
           <div className="input-group">
-            <Button title="Play with us" classes="btn blu-btn w-100" />
+            <Button
+              title={
+                isSending ? "Sending..." : isSent ? " Sent" : "Play with us"
+              }
+              classes={
+                isSending || isSent
+                  ? "btn blu-btn w-100 sending"
+                  : "btn blu-btn w-100"
+              }
+              onClick={handleClick}
+            >
+              <HiOutlinePaperAirplane />
+            </Button>
           </div>
           <Link to="/login" className="redirect-link">
             Signin
