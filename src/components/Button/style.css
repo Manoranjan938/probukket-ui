@@ -7,6 +7,28 @@
     transition: .25s;
 }
 
+.btn-icon {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    margin-right: 10px;
+    transition: .2s;
+    rotate: 90deg;
+}
+
+.btn-title {
+    white-space: nowrap;
+    display: block;
+}
+
+button.sending .btn-title {
+    animation: textAnimation 5s both;
+}
+
+button.sending .btn-icon {
+    animation: iconAnimation 5s both;
+}
+
 .small-btn {
     display: flex;
     align-items: center;
@@ -59,4 +81,76 @@
 
 .w-25 {
     width: 25%;
+}
+
+@keyframes textAnimation {
+
+    0%,
+    30% {
+        translate: 0 0;
+    }
+
+    39.9% {
+        translate: 0 100px;
+    }
+
+    40% {
+        translate: 300px 100px;
+    }
+
+    40.1% {
+        translate: 300px -20px;
+    }
+
+    40.2% {
+        translate: 33px -20px;
+    }
+
+    45% {
+        translate: 33px 0px;
+    }
+
+    95% {
+        translate: 33px 0px;
+    }
+
+    100% {
+        translate: 0 0;
+    }
+}
+
+@keyframes iconAnimation {
+
+    0%,
+    5% {
+        translate: 0 0;
+    }
+
+    20%,
+    30% {
+        translate: -150px 0;
+    }
+
+    40% {
+        translate: 220px 0;
+        scale: 2;
+    }
+
+    40.1% {
+        translate: 200px -60px;
+        scale: 1;
+    }
+
+    40.2% {
+        translate: 34px -60px;
+    }
+
+    45%,
+    95% {
+        translate: 34px 0;
+    }
+
+    100% {
+        translate: 0 0;
+    }
 }
