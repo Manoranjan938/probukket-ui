@@ -15,6 +15,7 @@ import Main from "src/pages/Main/Main";
 import Root from "./Root";
 import Signup from "src/pages/Signup";
 import SignupSuccess from "src/pages/SuccessfulScreen";
+import CreateProject from "src/pages/CreateProject";
 
 const Routers = (): ReactElement => {
   const router = createBrowserRouter(
@@ -25,6 +26,7 @@ const Routers = (): ReactElement => {
         <Route path="signup" element={<Signup />} />
         <Route path="forgot" element={<Forgot />} />
         <Route path="success" element={<SignupSuccess />} />
+        <Route path="create-project" element={<CreateProject />} />
         <Route
           path="dashboard/*"
           element={
