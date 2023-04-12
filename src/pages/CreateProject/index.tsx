@@ -12,7 +12,9 @@ const CreateProject = (): ReactElement => {
       );
     }
     if (activePage === 1) {
-      <UserType currentPage={activePage} setCurrentPage={setActivePage} />;
+      return (
+        <UserType currentPage={activePage} setCurrentPage={setActivePage} />
+      );
     }
   };
 
