@@ -71,6 +71,17 @@ button.sending .btn-icon {
     background: none;
 }
 
+.project-next-btn {
+    margin-top: 20px;
+    float: right;
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
 .w-100 {
     width: 100%;
 }
