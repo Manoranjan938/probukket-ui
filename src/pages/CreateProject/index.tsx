@@ -1,6 +1,7 @@
 import { useState, type ReactElement } from "react";
 import ProjectType from "./components/ProjectType";
 import UserType from "./components/UserType";
+import ProjectForm from "./components/ProjectForm";
 
 const CreateProject = (): ReactElement => {
   const [activePage, setActivePage] = useState<number>(0);
@@ -12,7 +13,12 @@ const CreateProject = (): ReactElement => {
       );
     }
     if (activePage === 1) {
-      <UserType currentPage={activePage} setCurrentPage={setActivePage} />;
+      return (
+        <UserType currentPage={activePage} setCurrentPage={setActivePage} />
+      );
+    }
+    if (activePage === 2) {
+      return <ProjectForm />;
     }
   };
 
