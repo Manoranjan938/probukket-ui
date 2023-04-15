@@ -18,7 +18,7 @@ input {
 }
 
 .search:is(:hover, .open) {
-    background: rgb(0, 0, 0 / 10%);
+    background: #efefef;
 }
 
 .search.open {
