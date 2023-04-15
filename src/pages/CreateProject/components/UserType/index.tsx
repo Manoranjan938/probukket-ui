@@ -2,6 +2,8 @@ import { type ReactElement } from "react";
 import Button from "src/components/Button";
 
 import "./style.css";
+import CustomRadio from "src/components/CustomRadio";
+import { FaUser, FaUserFriends, FaUserShield } from "react-icons/fa";
 
 interface ProjectTypeProps {
   currentPage: number;
@@ -26,40 +28,28 @@ const UserType = ({
       </div>
       <div className="user_type_container">
         <div className="user_type_card">
-          <input type="radio" name="option" id="" />
-          <div className="type_option_content">
-            <div className="icon">
-              <i className="fas fa-user-graduate" />
-            </div>
-            <div className="content">
-              <h4>Personal Project</h4>
-              <p>You can only manage the project</p>
-            </div>
-          </div>
+          <CustomRadio
+            title="Personal Managed Project"
+            subtitle="Only you can manage the project"
+            classes="flex_content"
+            icon={<FaUser />}
+          />
         </div>
         <div className="user_type_card">
-          <input type="radio" name="option" id="" />
-          <div className="type_option_content">
-            <div className="icon">
-              <i className="fas fa-user-graduate" />
-            </div>
-            <div className="content">
-              <h4>Team Managed Project</h4>
-              <p>Only team lead can manage the project</p>
-            </div>
-          </div>
+          <CustomRadio
+            title="Team Managed Project"
+            subtitle="Only team lead can manage the project"
+            classes="flex_content"
+            icon={<FaUserFriends />}
+          />
         </div>
         <div className="user_type_card">
-          <input type="radio" name="option" id="" />
-          <div className="type_option_content">
-            <div className="icon">
-              <i className="fas fa-user-graduate" />
-            </div>
-            <div className="content">
-              <h4>Organisation Managed Project</h4>
-              <p>Only organisations admin can manage the project</p>
-            </div>
-          </div>
+          <CustomRadio
+            title="Organisation Managed Project"
+            subtitle="Only organisations admin can manage the project"
+            classes="flex_content"
+            icon={<FaUserShield />}
+          />
         </div>
       </div>
       <div className="btn-group">

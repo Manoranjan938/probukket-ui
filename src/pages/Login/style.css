@@ -70,3 +70,11 @@ input[type="text"] {
     width: 100%;
     font-size: 15px;
 }
+
+.input-field {
+    border: none;
+    outline: none;
+    background: none;
+    width: 100%;
+    font-size: 15px;
+}
