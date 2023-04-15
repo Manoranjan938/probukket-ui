@@ -3,6 +3,9 @@ import React, { type ReactElement } from "react";
 import "./style.css";
 import Button from "src/components/Button";
 import CustomRadio from "src/components/CustomRadio";
+import { AiOutlineFundProjectionScreen } from "react-icons/ai";
+import { IoBugOutline } from "react-icons/io5";
+import { VscDebugConsole } from "react-icons/vsc";
 
 interface ProjectTypeProps {
   currentPage: number;
@@ -24,13 +27,25 @@ const ProjectType = ({
       </div>
       <div className="project_type_container">
         <div className="project_type_card">
-          <CustomRadio />
+          <CustomRadio
+            title="Project"
+            icon={<AiOutlineFundProjectionScreen />}
+            classes="option_content"
+          />
         </div>
         <div className="project_type_card">
-          <CustomRadio />
+          <CustomRadio
+            title="Bug"
+            classes="option_content"
+            icon={<IoBugOutline />}
+          />
         </div>
         <div className="project_type_card">
-          <CustomRadio />
+          <CustomRadio
+            title="Project & Bug"
+            classes="option_content"
+            icon={<VscDebugConsole />}
+          />
         </div>
       </div>
       <Button

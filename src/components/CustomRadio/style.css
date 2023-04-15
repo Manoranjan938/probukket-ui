@@ -48,12 +48,26 @@ input[type="radio"]:checked::after {
     cursor: pointer;
 }
 
-.option_content .fas {
+.flex_content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    position: absolute;
+    bottom: 20%;
+    left: 5%;
+}
+
+.flex_content .radio_icon {
+    font-size: 3rem;
+    color: var(--deep-gray-color);
+}
+
+.radio_icon {
+    margin-bottom: -20px;
     font-size: 5rem;
 }
 
 .option_content h4 {
-    margin-top: 30px;
     font-size: 15px;
     font-weight: 500;
     text-align: center;
