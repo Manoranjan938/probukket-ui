@@ -1,6 +1,8 @@
 import { type ReactElement, useState } from "react";
 import { IoMdNotificationsOutline } from "react-icons/io";
 
+import "./style.css";
+
 const Notification = (): ReactElement => {
   const [isOpen, setIsOpen] = useState("");
   const handleClick = (): void => {
@@ -8,12 +10,12 @@ const Notification = (): ReactElement => {
   };
   return (
     <div className="wrapper">
-      <div className={`search ${isOpen}`}>
+      <div className={`notification ${isOpen}`}>
         <button onClick={handleClick}>
           {isOpen ? <IoMdNotificationsOutline /> : <IoMdNotificationsOutline />}
         </button>
       </div>
-      <div className={`items ${isOpen}`}>
+      <div className={`notification-items ${isOpen}`}>
         <button>Something</button>
       </div>
     </div>

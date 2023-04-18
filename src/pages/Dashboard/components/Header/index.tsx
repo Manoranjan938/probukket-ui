@@ -4,6 +4,7 @@ import Dropdown from "src/components/Dropdown";
 import { HiOutlineDocumentText, HiOutlineShare } from "react-icons/hi";
 import Search from "src/components/Search";
 import Notification from "../Notification";
+import UserAvatar from "../Avatar";
 
 const DashboardHeader = (): ReactElement => {
   return (
@@ -16,6 +17,7 @@ const DashboardHeader = (): ReactElement => {
       <div className="header_left">
         <Search />
         <Notification />
+        <UserAvatar />
       </div>
     </div>
   );
