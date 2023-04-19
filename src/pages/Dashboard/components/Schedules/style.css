@@ -1,0 +1,7 @@
+.schedules {
+    margin-top: 1rem;
+    background: var(--container-color);
+    border-radius: 1rem;
+    padding: 1rem 1.3rem;
+    width: 100%;
+}

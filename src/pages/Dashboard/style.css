@@ -163,3 +163,9 @@
     margin: 0 6px;
     cursor: pointer;
 }
+
+.first_row {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 3fr 1.2fr;
+}

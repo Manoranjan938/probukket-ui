@@ -9,7 +9,7 @@ import {
 import Dashboard from "src/pages/Dashboard";
 import ErrorPage from "src/pages/Error/ErrorPage";
 import Forgot from "src/pages/Forgot";
-import Home from "src/pages/Dashboard/components/Main";
+import Home from "src/pages/Dashboard/pages/Main";
 import Login from "src/pages/Login";
 import Main from "src/pages/Main/Main";
 import Root from "./Root";

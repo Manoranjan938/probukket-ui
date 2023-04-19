@@ -6,6 +6,7 @@ import Routers from "./routers/Routers";
 import { store } from "./store";
 import "./styles/global.css";
 import "./styles/style.css";
+import "./styles/tailwind.css";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
