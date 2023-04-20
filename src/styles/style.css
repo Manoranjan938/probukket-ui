@@ -31,3 +31,48 @@
   height: 1px;
   background-color: #ccc;
 }
+
+.grid {
+  display: grid;
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.text-4 {
+  font-size: 3.5rem;
+}
+
+.text-2 {
+  font-size: 1.6rem;
+}
+
+.font-medium {
+  font-weight: 600;
+}
+
+.font-semibold {
+  font-weight: 700;
+}
+
+.mt-2 {
+  margin-top: 20px;
+}
+
+.ml-1 {
+  margin-left: 10px;
+}
