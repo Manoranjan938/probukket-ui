@@ -6,27 +6,79 @@ import "./style.css";
 interface ChartType {
   options: any;
   series: any;
+  plotOptions?: any;
 }
 
 const BarChart = (): ReactElement => {
   const [chartData, setChartData] = useState<ChartType>({
     options: {},
     series: [],
+    plotOptions: {},
   });
+
+  const defaultOptions = {
+    chart: {
+      toolbar: { show: false },
+      animations: {
+        speed: 750,
+        dynamicAnimation: {
+          enable: true,
+          speed: 350,
+        },
+      },
+    },
+    dataLabels: {
+      postion: "bottom",
+    },
+    legend: { show: false },
+    fill: {
+      type: "gradient",
+      gradient: {
+        shade: "light",
+        type: "vertical",
+        opacityFrom: 0.9,
+        opacityTo: 0.5,
+        shadeIntensity: 0.1,
+      },
+    },
+  };
+
   useEffect(() => {
     setChartData({
       options: {
-        chart: {
-          id: "basic-bar",
+        ...defaultOptions,
+        colors: ["#6175fa", "#6ecb96", "#f57b34"],
+        grid: {
+          borderColor: "#d7ddff",
+        },
+        plotOptions: {
+          bar: {
+            horizontal: false,
+            borderRadius: 10,
+            distributed: true,
+          },
         },
         xaxis: {
-          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+          categories: [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+          ],
         },
       },
       series: [
         {
           name: "series-1",
-          data: [30, 40, 45, 50, 49, 60, 70, 91],
+          data: [30, 40, 45, 50, 49, 60, 70, 91, 54, 12, 81, 55],
         },
       ],
     });
