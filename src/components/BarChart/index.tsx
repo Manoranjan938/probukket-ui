@@ -77,7 +77,7 @@ const BarChart = (): ReactElement => {
       },
       series: [
         {
-          name: "series-1",
+          name: "Total Hours",
           data: [30, 40, 45, 50, 49, 60, 70, 91, 54, 12, 81, 55],
         },
       ],
@@ -85,12 +85,15 @@ const BarChart = (): ReactElement => {
   }, []);
   return (
     <div className="chart_container">
-      <Chart
-        options={chartData.options}
-        series={chartData?.series}
-        type="bar"
-        width={"1000px"}
-      />
+      <div className="bar_chart">
+        <Chart
+          options={chartData.options}
+          series={chartData?.series}
+          type="bar"
+          width={"100%"}
+          height={"100%"}
+        />
+      </div>
     </div>
   );
 };
