@@ -5,10 +5,17 @@ import logo from "src/assets/logo.png";
 import img from "src/assets/avatars/avatar3.png";
 
 import { RxDashboard } from "react-icons/rx";
-import { BsCalendarCheck, BsFolder, BsFolder2Open } from "react-icons/bs";
+import {
+  BsCalendar2CheckFill,
+  BsCalendarCheck,
+  BsFolder,
+  BsFolder2Open,
+} from "react-icons/bs";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { BiCalendar, BiMessageSquareDetail } from "react-icons/bi";
 import { IoPeopleOutline } from "react-icons/io5";
+import { TbNotes } from "react-icons/tb";
+import { GrCompliance, GrDocumentUser } from "react-icons/gr";
 
 const Sidebar = (): ReactElement => {
   const [isSubnav, setSubnav] = useState<boolean>(false);
@@ -96,18 +103,52 @@ const Sidebar = (): ReactElement => {
               </ul>
             ) : null}
           </li>
-          <li>
+          <li onClick={toggleSubnav}>
             <Link to="#" className="sidebar_link">
               <div className="links">
                 <div className="sidebar_icon">
-                  <BsCalendarCheck />
+                  {isSubnav ? <BsCalendar2CheckFill /> : <BsCalendarCheck />}
                 </div>
                 <span className="sidebar_title">Tasks</span>
               </div>
-              <div className="sidebar_toggle_icon">
-                <IoIosArrowDown />
-              </div>
+              {isSubnav ? (
+                <div className="sidebar_toggle_icon">
+                  <IoIosArrowUp />
+                </div>
+              ) : (
+                <div className="sidebar_toggle_icon">
+                  <IoIosArrowDown />
+                </div>
+              )}
             </Link>
+            {isSubnav ? (
+              <ul>
+                <li>
+                  <Link to="/" className="dropdown_link">
+                    <div className="dropdown_icon">
+                      <TbNotes />
+                    </div>
+                    <span className="dropdown_title">All Tasks</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/" className="dropdown_link dropdown_active">
+                    <div className="dropdown_icon">
+                      <GrDocumentUser />
+                    </div>
+                    <span className="dropdown_title">My Tasks</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/" className="dropdown_link">
+                    <div className="dropdown_icon">
+                      <GrCompliance />
+                    </div>
+                    <span className="dropdown_title">My Completed Task</span>
+                  </Link>
+                </li>
+              </ul>
+            ) : null}
           </li>
           <li>
             <Link to="/" className="sidebar_link">
