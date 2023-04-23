@@ -1,4 +1,4 @@
-import React, { useState, type ReactElement } from "react";
+import React, { useState, type ReactElement, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import logo from "src/assets/logo.png";
@@ -16,13 +16,27 @@ import { BiCalendar, BiMessageSquareDetail } from "react-icons/bi";
 import { IoPeopleOutline } from "react-icons/io5";
 import { TbNotes } from "react-icons/tb";
 import { GrCompliance, GrDocumentUser } from "react-icons/gr";
+import { useDispatch } from "react-redux";
+import { addBarType } from "src/store/slices/sidebarSlice";
 
 const Sidebar = (): ReactElement => {
   const [isSubnav, setSubnav] = useState<boolean>(false);
+  const dispatch = useDispatch();
+
   const toggleSubnav = (): any => {
     setSubnav(!isSubnav);
   };
   console.log(window.location);
+
+  useEffect(() => {
+    dispatch(
+      addBarType({
+        bar: "main-sidebar",
+        currentActive: "home",
+        hasSubLink: false,
+      }),
+    );
+  }, []);
   return (
     <aside className="sidebar_container">
       <section className="sidebar_header">
