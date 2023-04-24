@@ -47,7 +47,7 @@ const RadialChart = (): ReactElement => {
         },
         labels: ["Progress"],
       },
-      series: [67, 75],
+      series: [67],
     });
   }, []);
   return (

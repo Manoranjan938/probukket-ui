@@ -1,41 +1,56 @@
-import React, { useState, type ReactElement, useEffect } from "react";
+import { useState, type ReactElement, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import logo from "src/assets/logo.png";
 import img from "src/assets/avatars/avatar3.png";
 
-import { RxDashboard } from "react-icons/rx";
-import {
-  BsCalendar2CheckFill,
-  BsCalendarCheck,
-  BsFolder,
-  BsFolder2Open,
-} from "react-icons/bs";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { BiCalendar, BiMessageSquareDetail } from "react-icons/bi";
-import { IoPeopleOutline } from "react-icons/io5";
-import { TbNotes } from "react-icons/tb";
-import { GrCompliance, GrDocumentUser } from "react-icons/gr";
-import { useDispatch } from "react-redux";
+
+import { useDispatch, useSelector } from "react-redux";
 import { addBarType } from "src/store/slices/sidebarSlice";
+import { sidebarData } from "./sidebarData";
+
+interface MenuTypes {
+  id: number;
+  title: string;
+  inActiveIcon: any;
+  activeIcon: any;
+  path: string;
+  badge: string;
+  submenu: [];
+}
 
 const Sidebar = (): ReactElement => {
-  const [isSubnav, setSubnav] = useState<boolean>(false);
+  const [menus, setMenus] = useState<any>([]);
   const dispatch = useDispatch();
+  const data = useSelector((state: any) => state.sidebar);
 
-  const toggleSubnav = (): any => {
-    setSubnav(!isSubnav);
+  console.log(data);
+
+  // console.log(window.location);
+
+  const toggleActive = (current: string, sublink: boolean): void => {
+    dispatch(
+      addBarType({
+        bar: "main-sidebar",
+        currentActive: current,
+        hasSubLink: sublink,
+        dependantLink: current,
+      }),
+    );
   };
-  console.log(window.location);
 
   useEffect(() => {
     dispatch(
       addBarType({
         bar: "main-sidebar",
-        currentActive: "home",
+        currentActive: "Dashboard",
         hasSubLink: false,
+        dependantLink: "none",
       }),
     );
+    const menu = sidebarData.filter((item) => item.type === "main-sidebar");
+    setMenus(menu[0]?.menus);
   }, []);
   return (
     <aside className="sidebar_container">
@@ -60,146 +75,63 @@ const Sidebar = (): ReactElement => {
       <div className="devider" />
       <section className="sidebar_links">
         <ul>
-          <li onClick={toggleSubnav}>
-            <Link to="/" className="sidebar_link">
-              <div className="links">
-                <div className="sidebar_icon">
-                  <RxDashboard />
+          {menus.map((it: MenuTypes) => (
+            <li
+              key={it.id}
+              onClick={() => {
+                toggleActive(it.title, Boolean(it.submenu));
+              }}
+            >
+              <Link
+                to={it?.path ? it.path : "#"}
+                className={
+                  data.currentlyActiveLink === it.title
+                    ? "sidebar_link sidebar_active"
+                    : "sidebar_link"
+                }
+              >
+                <div className="links">
+                  <div className="sidebar_icon">{it.inActiveIcon}</div>
+                  <span className="sidebar_title">{it.title}</span>
                 </div>
-                <span className="sidebar_title">Dashboard</span>
-              </div>
-            </Link>
-          </li>
-          <li onClick={toggleSubnav}>
-            <Link to="#" className="sidebar_link sidebar_active">
-              <div className="links">
-                <div className="sidebar_icon">
-                  {isSubnav ? <BsFolder2Open /> : <BsFolder />}
-                </div>
-                <span className="sidebar_title">Projects</span>
-              </div>
-              {isSubnav ? (
-                <div className="sidebar_toggle_icon">
-                  <IoIosArrowUp />
-                </div>
-              ) : (
-                <div className="sidebar_toggle_icon">
-                  <IoIosArrowDown />
-                </div>
-              )}
-            </Link>
-            {isSubnav ? (
-              <ul>
-                <li>
-                  <Link to="/" className="dropdown_link">
-                    <div className="dropdown_icon">
-                      <RxDashboard />
+                {it.submenu ? (
+                  data.doActiveLinkHasSubLink &&
+                  it.title === data.submenuLinksFor ? (
+                    <div className="sidebar_toggle_icon">
+                      <IoIosArrowUp />
                     </div>
-                    <span className="dropdown_title">Project 1</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="dropdown_link dropdown_active">
-                    <div className="dropdown_icon">
-                      <RxDashboard />
+                  ) : (
+                    <div className="sidebar_toggle_icon">
+                      <IoIosArrowDown />
                     </div>
-                    <span className="dropdown_title">Project 2</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="dropdown_link">
-                    <div className="dropdown_icon">
-                      <RxDashboard />
-                    </div>
-                    <span className="dropdown_title">Project 3</span>
-                  </Link>
-                </li>
-              </ul>
-            ) : null}
-          </li>
-          <li onClick={toggleSubnav}>
-            <Link to="#" className="sidebar_link">
-              <div className="links">
-                <div className="sidebar_icon">
-                  {isSubnav ? <BsCalendar2CheckFill /> : <BsCalendarCheck />}
-                </div>
-                <span className="sidebar_title">Tasks</span>
-              </div>
-              {isSubnav ? (
-                <div className="sidebar_toggle_icon">
-                  <IoIosArrowUp />
-                </div>
-              ) : (
-                <div className="sidebar_toggle_icon">
-                  <IoIosArrowDown />
-                </div>
-              )}
-            </Link>
-            {isSubnav ? (
-              <ul>
-                <li>
-                  <Link to="/" className="dropdown_link">
-                    <div className="dropdown_icon">
-                      <TbNotes />
-                    </div>
-                    <span className="dropdown_title">All Tasks</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="dropdown_link dropdown_active">
-                    <div className="dropdown_icon">
-                      <GrDocumentUser />
-                    </div>
-                    <span className="dropdown_title">My Tasks</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="dropdown_link">
-                    <div className="dropdown_icon">
-                      <GrCompliance />
-                    </div>
-                    <span className="dropdown_title">My Completed Task</span>
-                  </Link>
-                </li>
-              </ul>
-            ) : null}
-          </li>
-          <li>
-            <Link to="/" className="sidebar_link">
-              <div className="links">
-                <div className="sidebar_icon">
-                  <BiMessageSquareDetail />
-                </div>
-                <span className="sidebar_title">Messages</span>
-              </div>
-              <div className="badge grn">
-                <span>9+</span>
-              </div>
-            </Link>
-          </li>
-          <li>
-            <Link to="/" className="sidebar_link">
-              <div className="links">
-                <div className="sidebar_icon">
-                  <BiCalendar />
-                </div>
-                <span className="sidebar_title">Calender</span>
-              </div>
-            </Link>
-          </li>
-          <li>
-            <Link to="/" className="sidebar_link">
-              <div className="links">
-                <div className="sidebar_icon">
-                  <IoPeopleOutline />
-                </div>
-                <span className="sidebar_title">Teams</span>
-              </div>
-              <div className="badge orng">
-                <span>4</span>
-              </div>
-            </Link>
-          </li>
+                  )
+                ) : null}
+                {it.badge ? (
+                  <div
+                    className={`badge ${
+                      it.title === "Messages" ? "grn" : "orng"
+                    }`}
+                  >
+                    <span>{it.badge}</span>
+                  </div>
+                ) : null}
+              </Link>
+              {it.submenu &&
+              data.doActiveLinkHasSubLink &&
+              it.title === data.submenuLinksFor ? (
+                <ul>
+                  {it.submenu.map((subMenu: any) => (
+                    <li key={subMenu?.id}>
+                      <Link to="/" className="dropdown_link">
+                        <div className="dropdown_icon">{subMenu.icon}</div>
+                        <span className="dropdown_title">{subMenu.title}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </li>
+          ))}
         </ul>
       </section>
     </aside>
