@@ -16,6 +16,7 @@ import Root from "./Root";
 import Signup from "src/pages/Signup";
 import SignupSuccess from "src/pages/SuccessfulScreen";
 import CreateProject from "src/pages/CreateProject";
+import ProjectTasks from "src/pages/Dashboard/pages/Tasks";
 
 const Routers = (): ReactElement => {
   const router = createBrowserRouter(
@@ -33,6 +34,7 @@ const Routers = (): ReactElement => {
             <Dashboard>
               <Routes>
                 <Route path="home" element={<Home />} />
+                <Route path="tasks?f=all" element={<ProjectTasks />} />
               </Routes>
             </Dashboard>
           }

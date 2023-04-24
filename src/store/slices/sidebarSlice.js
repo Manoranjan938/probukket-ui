@@ -4,7 +4,7 @@ const initialState = {
   barType: "",
   currentlyActiveLink: "",
   doActiveLinkHasSubLink: false,
-  submenuLinks: [],
+  submenuLinksFor: "",
 };
 
 const sidebarSlice = createSlice({
@@ -15,6 +15,7 @@ const sidebarSlice = createSlice({
       state.barType = action.payload.bar;
       state.currentlyActiveLink = action.payload.currentActive;
       state.doActiveLinkHasSubLink = action.payload.hasSubLink;
+      state.submenuLinksFor = action.payload.dependantLink;
     },
   },
 });
