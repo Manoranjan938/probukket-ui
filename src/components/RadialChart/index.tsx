@@ -41,7 +41,15 @@ const RadialChart = (): ReactElement => {
             },
           },
         },
-
+        fill: {
+          type: "gradient",
+          gradient: {
+            shade: "dark",
+            type: "vertical",
+            gradientToColors: ["#f57b34"],
+            stops: [0, 100],
+          },
+        },
         stroke: {
           lineCap: "round",
         },

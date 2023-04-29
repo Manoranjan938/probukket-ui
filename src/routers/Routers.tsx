@@ -11,7 +11,7 @@ import ErrorPage from "src/pages/Error/ErrorPage";
 import Forgot from "src/pages/Forgot";
 import Home from "src/pages/Dashboard/pages/Main";
 import Login from "src/pages/Login";
-import Main from "src/pages/Main/Main";
+import Main from "src/pages/Main";
 import Root from "./Root";
 import Signup from "src/pages/Signup";
 import SignupSuccess from "src/pages/SuccessfulScreen";

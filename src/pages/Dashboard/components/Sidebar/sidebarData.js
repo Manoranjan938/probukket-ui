@@ -9,7 +9,7 @@ import { BiCalendar, BiMessageSquareDetail } from "react-icons/bi";
 import { IoDocumentTextOutline, IoPeopleOutline } from "react-icons/io5";
 import { TbBrandStackshare, TbNotes } from "react-icons/tb";
 import { GrCompliance, GrDocumentUser } from "react-icons/gr";
-import { MdEditNote } from "react-icons/md";
+import { MdEditNote, MdOutlinePunchClock } from "react-icons/md";
 import { GoCloudUpload } from "react-icons/go";
 
 export const sidebarData = [
@@ -120,6 +120,14 @@ export const sidebarData = [
         id: 10,
         title: "Forum",
         inActiveIcon: <TbBrandStackshare />,
+        activeIcon: "",
+        path: "/my-forums",
+        badge: null,
+      },
+      {
+        id: 11,
+        title: "My Timers",
+        inActiveIcon: <MdOutlinePunchClock />,
         activeIcon: "",
         path: "/my-forums",
         badge: null,

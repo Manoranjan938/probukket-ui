@@ -9,6 +9,7 @@
 
 .title {
   font-size: var(--h2-font-size);
+  font-weight: var(--font-medium);
   color: var(--dark-color);
   text-align: center;
 }
@@ -16,6 +17,7 @@
 .subtitle {
   font-size: var(--small-font-size);
   color: var(--dark-color);
+  text-align: center;
 }
 
 .redirect-link {
