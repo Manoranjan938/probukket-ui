@@ -53,6 +53,11 @@ button.sending .btn-icon {
   color: var(--container-color);
 }
 
+.gray-btn {
+  background-color: var(--deep-gray-color);
+  color: var(--container-color);
+}
+
 .outlined-grn-btn {
   border: 1px solid var(--secondary-color);
   color: var(--secondary-color);
@@ -80,6 +85,12 @@ button.sending .btn-icon {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
+}
+
+.button-group {
+  margin: 30px 0;
+  display: flex;
+  gap: 1rem;
 }
 
 .w-100 {

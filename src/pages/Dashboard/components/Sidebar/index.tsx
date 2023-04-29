@@ -25,8 +25,6 @@ const Sidebar = (): ReactElement => {
   const dispatch = useDispatch();
   const data = useSelector((state: any) => state.sidebar);
 
-  console.log(data);
-
   // console.log(window.location);
 
   const toggleActive = (current: string, sublink: boolean): void => {
