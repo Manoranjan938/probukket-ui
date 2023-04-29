@@ -1,6 +1,6 @@
 .radial_chart {
-    background: var(--container-color);
-    border-radius: 1rem;
-    height: 235px;
-    width: 100%;
+  background: var(--container-color);
+  border-radius: 1rem;
+  height: 235px;
+  width: 100%;
 }

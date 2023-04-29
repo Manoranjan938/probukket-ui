@@ -1,12 +1,12 @@
 .chart_container {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
 }
 
 .bar_chart {
-    background: var(--container-color);
-    border-radius: 1rem;
-    height: 400px;
-    width: 100%;
+  background: var(--container-color);
+  border-radius: 1rem;
+  height: 400px;
+  width: 100%;
 }
