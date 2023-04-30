@@ -6,17 +6,17 @@ import {
   RouterProvider,
   Routes,
 } from "react-router-dom";
+import CreateProject from "src/pages/CreateProject";
 import Dashboard from "src/pages/Dashboard";
 import ErrorPage from "src/pages/Error/ErrorPage";
 import Forgot from "src/pages/Forgot";
 import Home from "src/pages/Dashboard/pages/Main";
 import Login from "src/pages/Login";
 import Main from "src/pages/Main";
+import ProjectTasks from "src/pages/Dashboard/pages/Tasks";
 import Root from "./Root";
 import Signup from "src/pages/Signup";
 import SignupSuccess from "src/pages/SuccessfulScreen";
-import CreateProject from "src/pages/CreateProject";
-import ProjectTasks from "src/pages/Dashboard/pages/Tasks";
 
 const Routers = (): ReactElement => {
   const router = createBrowserRouter(
@@ -34,7 +34,7 @@ const Routers = (): ReactElement => {
             <Dashboard>
               <Routes>
                 <Route path="home" element={<Home />} />
-                <Route path="tasks?f=all" element={<ProjectTasks />} />
+                <Route path="tasks" element={<ProjectTasks />} />
               </Routes>
             </Dashboard>
           }
