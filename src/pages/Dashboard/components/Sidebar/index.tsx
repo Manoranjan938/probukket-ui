@@ -120,7 +120,7 @@ const Sidebar = (): ReactElement => {
                 <ul>
                   {it.submenu.map((subMenu: any) => (
                     <li key={subMenu?.id}>
-                      <Link to="/" className="dropdown_link">
+                      <Link to={subMenu?.path} className="dropdown_link">
                         <div className="dropdown_icon">{subMenu.icon}</div>
                         <span className="dropdown_title">{subMenu.title}</span>
                       </Link>
