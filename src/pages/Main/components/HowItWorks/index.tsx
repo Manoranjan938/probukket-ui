@@ -9,7 +9,7 @@ const HowWorks = (): ReactElement => {
   return (
     <section className="section container works_section">
       <div className="works_content_section">
-        <h3>Planner</h3>
+        <h3>How it works</h3>
         <h2>Project planner & collaborate</h2>
         <div className="it_works_cards">
           <div className="it_works_card">
