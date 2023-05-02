@@ -1,0 +1,42 @@
+.board_view_section {
+  width: 100%;
+}
+
+.board_view_header {
+  width: 100%;
+  display: flex;
+  gap: 1.4rem;
+}
+
+.task_board {
+  width: 100%;
+  background: var(--body-color);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 0.6rem;
+}
+
+.board_details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header_title {
+  font-size: 18px;
+}
+
+.counter {
+  font-size: 14px;
+  border: 1px solid var(--deep-gray-color);
+  padding: 1px 9px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.board_icon {
+  font-size: 24px;
+  cursor: pointer;
+}
