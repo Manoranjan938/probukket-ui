@@ -1,8 +1,10 @@
 import { type ReactElement } from "react";
 
 import { BsThreeDots } from "react-icons/bs";
-import "./style.css";
 import { GoPlus } from "react-icons/go";
+
+import "./style.css";
+import TaskItem from "../TaskItem";
 
 const BoardView = (): ReactElement => {
   return (
@@ -20,6 +22,9 @@ const BoardView = (): ReactElement => {
           </div>
           <div className="create_btn">
             <GoPlus />
+          </div>
+          <div className="board_item">
+            <TaskItem />
           </div>
         </div>
         <div className="second_board">
