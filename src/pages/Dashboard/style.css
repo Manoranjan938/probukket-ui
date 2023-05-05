@@ -25,6 +25,7 @@
   border-radius: 1rem;
   box-shadow: 0 0 10px rgba(53, 19, 85, 0.2);
   overflow-y: auto;
+  min-width: 300px;
 }
 
 .sidebar_logo {

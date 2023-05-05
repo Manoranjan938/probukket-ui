@@ -52,7 +52,9 @@ const ProjectTasks = (): ReactElement => {
           </div>
         </div>
       </div>
-      <BoardView />
+      <div className="task_board_view">
+        <BoardView />
+      </div>
     </section>
   );
 };

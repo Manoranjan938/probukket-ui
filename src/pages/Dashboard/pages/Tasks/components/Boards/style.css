@@ -16,6 +16,7 @@
   background: var(--body-color);
   border-radius: 0.6rem;
   padding: 0 1rem;
+  min-width: 300px;
 }
 
 .create_btn {

@@ -86,3 +86,9 @@
   background-color: var(--container-color);
   border-radius: 50px;
 }
+
+.task_board_view {
+  max-width: calc(100vw - 450px);
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
