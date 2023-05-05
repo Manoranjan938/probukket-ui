@@ -1,0 +1,8 @@
+.task_item_section {
+  background-color: var(--container-color);
+  margin-bottom: 1rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--light-main-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 2px rgba(0, 98, 200, 0.25);
+}
