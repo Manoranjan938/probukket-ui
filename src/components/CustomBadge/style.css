@@ -1,0 +1,30 @@
+.badge_container {
+  min-width: 100px;
+  max-width: 180px;
+  padding: 0 1rem;
+  height: 30px;
+  border-radius: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.meeting {
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+}
+
+.task {
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+}
+
+.design {
+  color: var(--deep-gray-color);
+  border: 1px solid var(--deep-gray-color);
+}
+
+.bug {
+  color: var(--third-color);
+  border: 1px solid var(--third-color);
+}

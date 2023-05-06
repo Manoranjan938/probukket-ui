@@ -40,6 +40,9 @@ const BoardView = (): ReactElement => {
           <div className="create_btn">
             <GoPlus />
           </div>
+          <div className="board_item">
+            <TaskItem />
+          </div>
         </div>
         <div className="third_board">
           <div className="task_board">
@@ -53,6 +56,9 @@ const BoardView = (): ReactElement => {
           </div>
           <div className="create_btn">
             <GoPlus />
+          </div>
+          <div className="board_item">
+            <TaskItem />
           </div>
         </div>
         <div className="last_board">
