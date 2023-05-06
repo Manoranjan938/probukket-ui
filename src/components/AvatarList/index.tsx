@@ -22,7 +22,7 @@ const Avatarlist = ({ avatarCounts = 0 }: AvatartListProps): ReactElement => {
     <div className="widget">
       <div className="avatar-list">
         {content}
-        <button className="avtar plus">+42</button>
+        <button className="avtar plus">+2</button>
       </div>
     </div>
   );
