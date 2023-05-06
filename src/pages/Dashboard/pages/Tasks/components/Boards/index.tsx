@@ -25,6 +25,8 @@ const BoardView = (): ReactElement => {
           </div>
           <div className="board_item">
             <TaskItem />
+            <TaskItem />
+            <TaskItem />
           </div>
         </div>
         <div className="second_board">
