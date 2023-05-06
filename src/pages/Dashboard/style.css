@@ -18,14 +18,16 @@
 }
 
 .sidebar_container {
+  position: fixed;
   background-color: var(--container-color);
-  height: 100%;
+  height: auto;
   width: 100%;
   padding: 1rem;
   border-radius: 1rem;
   box-shadow: 0 0 10px rgba(53, 19, 85, 0.2);
-  overflow-y: auto;
+  overflow-y: auto !important;
   min-width: 300px;
+  max-width: 320px;
 }
 
 .sidebar_logo {
