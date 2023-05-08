@@ -6,34 +6,21 @@ import { IoCloseSharp } from "react-icons/io5";
 
 interface DrawerProps {
   open: boolean;
-  setOpen: (data: boolean) => void;
+  toggle: () => void;
 }
 
-const CustomDrawer = ({ open, setOpen }: DrawerProps): ReactElement => {
-  const toggleDrawer = (
-    event: React.KeyboardEvent | React.MouseEvent,
-  ): void => {
-    if (
-      event.type === "keydown" &&
-      ((event as React.KeyboardEvent).key === "Tab" ||
-        (event as React.KeyboardEvent).key === "Shift")
-    ) {
-      return;
-    }
-
-    setOpen(false);
-  };
+const CustomDrawer = ({ open, toggle }: DrawerProps): ReactElement => {
   return (
     <section className="drawer_section">
       <Drawer
         anchor={"right"}
         open={open}
         className="drawer_container"
-        onClose={toggleDrawer}
+        onClose={toggle}
       >
         <div className="drawer_header">
           <h2>My Title</h2>
-          <div className="srawer_close_btn" onClick={toggleDrawer}>
+          <div className="drawer_close_btn" onClick={toggle}>
             <IoCloseSharp />
           </div>
         </div>

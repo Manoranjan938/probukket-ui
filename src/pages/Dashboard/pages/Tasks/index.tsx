@@ -1,4 +1,4 @@
-import { type ReactElement } from "react";
+import { useState, type ReactElement } from "react";
 import BoardView from "./components/Boards";
 import Avatarlist from "src/components/AvatarList";
 
@@ -10,6 +10,11 @@ import { TfiViewList } from "react-icons/tfi";
 import { RxGrid } from "react-icons/rx";
 
 const ProjectTasks = (): ReactElement => {
+  const [viewType, setViewType] = useState<number>(1);
+
+  const toggleViewType = (n: number): void => {
+    setViewType(n);
+  };
   return (
     <section className="task_board_section">
       <div className="task_board_header">
@@ -39,13 +44,34 @@ const ProjectTasks = (): ReactElement => {
               </button>
             </div>
             <div className="view_type_btn">
-              <div className="board_view active_view">
+              <div
+                className={
+                  viewType === 1 ? "board_view active_view" : "board_view"
+                }
+                onClick={() => {
+                  toggleViewType(1);
+                }}
+              >
                 <HiOutlineViewBoards />
               </div>
-              <div className="grid_view">
+              <div
+                className={
+                  viewType === 2 ? "grid_view active_view" : "grid_view"
+                }
+                onClick={() => {
+                  toggleViewType(2);
+                }}
+              >
                 <RxGrid />
               </div>
-              <div className="list_view">
+              <div
+                className={
+                  viewType === 3 ? "list_view active_view" : "list_view"
+                }
+                onClick={() => {
+                  toggleViewType(3);
+                }}
+              >
                 <TfiViewList />
               </div>
             </div>

@@ -7,8 +7,7 @@ import {
 } from "react-icons/bs";
 import { BiCalendar, BiMessageSquareDetail } from "react-icons/bi";
 import { IoDocumentTextOutline, IoPeopleOutline } from "react-icons/io5";
-import { TbBrandStackshare, TbNotes } from "react-icons/tb";
-import { GrCompliance, GrDocumentUser } from "react-icons/gr";
+import { TbBrandStackshare } from "react-icons/tb";
 import { MdEditNote, MdOutlinePunchClock } from "react-icons/md";
 import { GoCloudUpload } from "react-icons/go";
 
@@ -29,44 +28,16 @@ export const sidebarData = [
         title: "Projects",
         inActiveIcon: <BsFolder />,
         activeIcon: <BsFolder2Open />,
-        path: null,
+        path: "/dashboard/my-project",
         badge: null,
-        submenu: [
-          {
-            id: 1,
-            title: "Project 1",
-            icon: <RxDashboard />,
-            path: "/dashboard/my-project",
-          },
-        ],
       },
       {
         id: 3,
         title: "Tasks",
         inActiveIcon: <BsCalendarCheck />,
         activeIcon: <BsCalendar2CheckFill />,
-        path: null,
+        path: "/dashboard/tasks",
         badge: null,
-        submenu: [
-          {
-            id: 1,
-            title: "All Tasks",
-            icon: <TbNotes />,
-            path: "/dashboard/tasks?f=all",
-          },
-          {
-            id: 2,
-            title: "My Tasks",
-            icon: <GrDocumentUser />,
-            path: "/dashboard/tasks?f=my-tasks",
-          },
-          {
-            id: 3,
-            title: "My Completed Tasks",
-            icon: <GrCompliance />,
-            path: "/dashboard/tasks?f=my-completed-tasks",
-          },
-        ],
       },
       {
         id: 4,

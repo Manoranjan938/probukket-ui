@@ -3,7 +3,7 @@
 }
 
 .drawer_header {
-  width: 500px;
+  width: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,7 +11,7 @@
   border-bottom: 1px solid var(--deep-gray-color);
 }
 
-.srawer_close_btn {
+.drawer_close_btn {
   display: flex;
   align-items: center;
   font-size: 30px;
