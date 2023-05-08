@@ -41,6 +41,7 @@ const TaskDetails = (): ReactElement => {
           </span>
         </div>
       </div>
+      <div className="task_details_body"></div>
     </section>
   );
 };
