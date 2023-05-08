@@ -13,13 +13,13 @@ import CustomDrawer from "src/components/CustomDrawer";
 
 const TaskItem = (): ReactElement => {
   const [showDrawer, setShowDrawer] = useState(false);
+
+  const toggleDrawer = (): void => {
+    setShowDrawer(!showDrawer);
+  };
+
   return (
-    <section
-      className="task_item_section"
-      onClick={() => {
-        setShowDrawer(true);
-      }}
-    >
+    <section className="task_item_section" onClick={toggleDrawer}>
       <div className="task_item_container">
         <div className="task_item_header">
           <CustomBadge classes="meeting" title="Meeting List" />
@@ -58,7 +58,7 @@ const TaskItem = (): ReactElement => {
           </div>
         </div>
       </div>
-      {showDrawer && <CustomDrawer open={showDrawer} setOpen={setShowDrawer} />}
+      <CustomDrawer open={showDrawer} toggle={toggleDrawer} />
     </section>
   );
 };

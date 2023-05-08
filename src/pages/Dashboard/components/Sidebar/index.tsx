@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import logo from "src/assets/logo.png";
 import img from "src/assets/avatars/avatar3.png";
 
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-
 import { useDispatch, useSelector } from "react-redux";
 import { addBarType } from "src/store/slices/sidebarSlice";
 import { sidebarData } from "./sidebarData";
@@ -27,12 +25,11 @@ const Sidebar = (): ReactElement => {
 
   // console.log(window.location);
 
-  const toggleActive = (current: string, sublink: boolean): void => {
+  const toggleActive = (current: string): void => {
     dispatch(
       addBarType({
         bar: "main-sidebar",
         currentActive: current,
-        hasSubLink: sublink,
         dependantLink: current,
       }),
     );
@@ -77,7 +74,7 @@ const Sidebar = (): ReactElement => {
             <li
               key={it.id}
               onClick={() => {
-                toggleActive(it.title, Boolean(it.submenu));
+                toggleActive(it.title);
               }}
             >
               <Link
@@ -92,18 +89,6 @@ const Sidebar = (): ReactElement => {
                   <div className="sidebar_icon">{it.inActiveIcon}</div>
                   <span className="sidebar_title">{it.title}</span>
                 </div>
-                {it.submenu ? (
-                  data.doActiveLinkHasSubLink &&
-                  it.title === data.submenuLinksFor ? (
-                    <div className="sidebar_toggle_icon">
-                      <IoIosArrowUp />
-                    </div>
-                  ) : (
-                    <div className="sidebar_toggle_icon">
-                      <IoIosArrowDown />
-                    </div>
-                  )
-                ) : null}
                 {it.badge ? (
                   <div
                     className={`badge ${
@@ -114,20 +99,6 @@ const Sidebar = (): ReactElement => {
                   </div>
                 ) : null}
               </Link>
-              {it.submenu &&
-              data.doActiveLinkHasSubLink &&
-              it.title === data.submenuLinksFor ? (
-                <ul>
-                  {it.submenu.map((subMenu: any) => (
-                    <li key={subMenu?.id}>
-                      <Link to={subMenu?.path} className="dropdown_link">
-                        <div className="dropdown_icon">{subMenu.icon}</div>
-                        <span className="dropdown_title">{subMenu.title}</span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
             </li>
           ))}
         </ul>
