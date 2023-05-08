@@ -7,9 +7,14 @@ import { IoCloseSharp } from "react-icons/io5";
 interface DrawerProps {
   open: boolean;
   toggle: () => void;
+  children?: ReactElement;
 }
 
-const CustomDrawer = ({ open, toggle }: DrawerProps): ReactElement => {
+const CustomDrawer = ({
+  open,
+  toggle,
+  children,
+}: DrawerProps): ReactElement => {
   return (
     <section className="drawer_section">
       <Drawer
@@ -24,6 +29,7 @@ const CustomDrawer = ({ open, toggle }: DrawerProps): ReactElement => {
             <IoCloseSharp />
           </div>
         </div>
+        {children}
       </Drawer>
     </section>
   );

@@ -10,6 +10,7 @@ import img from "src/assets/avatars/avatar2.png";
 import { BsChat } from "react-icons/bs";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 import CustomDrawer from "src/components/CustomDrawer";
+import TaskDetails from "../TaskDetails";
 
 const TaskItem = (): ReactElement => {
   const [showDrawer, setShowDrawer] = useState(false);
@@ -58,7 +59,9 @@ const TaskItem = (): ReactElement => {
           </div>
         </div>
       </div>
-      <CustomDrawer open={showDrawer} toggle={toggleDrawer} />
+      <CustomDrawer open={showDrawer} toggle={toggleDrawer}>
+        <TaskDetails />
+      </CustomDrawer>
     </section>
   );
 };
