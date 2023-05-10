@@ -1,0 +1,5 @@
+.task_history_section {
+  background: var(--light-main-color);
+  padding: 1rem 0.8rem;
+  border-radius: 1rem;
+}

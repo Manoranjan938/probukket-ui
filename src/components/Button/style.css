@@ -16,6 +16,14 @@
   rotate: 90deg;
 }
 
+.btn-icon-not-rev {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  margin-right: 10px;
+  transition: 0.2s;
+}
+
 .btn-title {
   white-space: nowrap;
   display: block;
@@ -90,6 +98,13 @@ button.sending .btn-icon {
 .button-group {
   margin: 30px 0;
   display: flex;
+  gap: 1rem;
+}
+
+.btn-grp-end {
+  margin: 20px 0;
+  display: flex;
+  justify-content: flex-end;
   gap: 1rem;
 }
 

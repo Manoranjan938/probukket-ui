@@ -1,0 +1,28 @@
+.task_extra_section {
+  border: 1px solid var(--deep-gray-color);
+  border-radius: 1rem;
+  padding: 0.8rem 1rem;
+  margin-bottom: 20px;
+}
+
+.task_extra_section h4 {
+  margin-bottom: 0.5rem;
+  font-size: 17px;
+}
+
+.task_details_extra_content {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.task_extra_content_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px dashed var(--deep-gray-color);
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+}

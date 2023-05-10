@@ -1,5 +1,6 @@
 .drawer_section {
   width: 100%;
+  z-index: 1000;
 }
 
 .drawer_header {
