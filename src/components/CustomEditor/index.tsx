@@ -1,9 +1,12 @@
-import React, { type ReactElement } from "react";
+import JoditEditor from "jodit-react";
+import { useRef, type ReactElement } from "react";
 
 const Editor = (): ReactElement => {
+  const innerRef = useRef(null);
+
   return (
     <section className="editor_section">
-      <h1>Hello</h1>
+      <JoditEditor value="" ref={innerRef} />
     </section>
   );
 };

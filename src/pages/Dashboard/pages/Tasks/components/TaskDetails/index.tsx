@@ -7,6 +7,7 @@ import { MdOutlineDeleteOutline } from "react-icons/md";
 import Avatarlist from "src/components/AvatarList";
 
 import "./style.css";
+import Editor from "src/components/CustomEditor";
 
 const TaskDetails = (): ReactElement => {
   return (
@@ -41,7 +42,9 @@ const TaskDetails = (): ReactElement => {
           </span>
         </div>
       </div>
-      <div className="task_details_body"></div>
+      <div className="task_details_body">
+        <Editor />
+      </div>
     </section>
   );
 };
