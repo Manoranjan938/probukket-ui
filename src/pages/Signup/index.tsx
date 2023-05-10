@@ -88,6 +88,7 @@ const Signup = (): ReactElement => {
                   : "btn blu-btn w-100"
               }
               onClick={handleClick}
+              btnType="login"
             >
               <HiOutlinePaperAirplane />
             </Button>

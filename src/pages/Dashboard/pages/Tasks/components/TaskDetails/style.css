@@ -62,4 +62,5 @@
 .task_details_body {
   display: grid;
   grid-template-columns: 3fr 1fr;
+  gap: 1.3rem;
 }

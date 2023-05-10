@@ -6,6 +6,7 @@ interface ButtonProps {
   classes: string;
   children?: ReactNode;
   onClick?: () => void;
+  btnType?: string;
 }
 
 const Button = ({
@@ -13,10 +14,15 @@ const Button = ({
   classes,
   children,
   onClick,
+  btnType,
 }: ButtonProps): ReactElement => {
   return (
     <button type="button" className={classes} onClick={onClick}>
-      {children ? <div className="btn-icon">{children}</div> : null}
+      {children ? (
+        <div className={btnType ? "btn-icon" : "btn-icon-not-rev"}>
+          {children}
+        </div>
+      ) : null}
       <span className="btn-title">{title}</span>
     </button>
   );

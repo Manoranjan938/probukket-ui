@@ -4,11 +4,11 @@ import "./style.css";
 import CustomBadge from "src/components/CustomBadge";
 import Avatarlist from "src/components/AvatarList";
 
+import { AiOutlineExclamationCircle } from "react-icons/ai";
+import { BsChat } from "react-icons/bs";
 import { ImAttachment } from "react-icons/im";
 
 import img from "src/assets/avatars/avatar2.png";
-import { BsChat } from "react-icons/bs";
-import { AiOutlineExclamationCircle } from "react-icons/ai";
 import CustomDrawer from "src/components/CustomDrawer";
 import TaskDetails from "../TaskDetails";
 import DrawerContext from "src/context/DrawerContext";
@@ -17,7 +17,6 @@ const TaskItem = (): ReactElement => {
   const [showDrawer, setShowDrawer] = useState(false);
 
   const toggleDrawer = (): void => {
-    console.log("somthing happenig");
     setShowDrawer(true);
   };
 
@@ -27,8 +26,8 @@ const TaskItem = (): ReactElement => {
 
   return (
     <DrawerContext.Provider value={{ showDrawer, toggle: closeDrawer }}>
-      <section className="task_item_section" onClick={toggleDrawer}>
-        <div className="task_item_container">
+      <section className="task_item_section">
+        <div className="task_item_container" onClick={toggleDrawer}>
           <div className="task_item_header">
             <CustomBadge classes="meeting" title="Meeting List" />
           </div>

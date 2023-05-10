@@ -1,13 +1,22 @@
 import { type ReactElement } from "react";
 
-import { HiUsers } from "react-icons/hi";
+import { HiOutlineCalendar, HiUsers } from "react-icons/hi";
 import { IoCopyOutline } from "react-icons/io5";
-import { MdOutlineDeleteOutline } from "react-icons/md";
+import {
+  MdOutlineDeleteOutline,
+  MdOutlinePermMedia,
+  MdOutlineTimer,
+} from "react-icons/md";
+import { TbSubtask } from "react-icons/tb";
+import { FaRegUser } from "react-icons/fa";
 
 import Avatarlist from "src/components/AvatarList";
 
 import "./style.css";
 import Editor from "src/components/CustomEditor";
+import Button from "src/components/Button";
+import TaskDetailsExtra from "../TaskDetailsExtra";
+import TaskHistory from "../TaskHistory";
 
 const TaskDetails = (): ReactElement => {
   return (
@@ -43,7 +52,36 @@ const TaskDetails = (): ReactElement => {
         </div>
       </div>
       <div className="task_details_body">
-        <Editor />
+        <div className="main_content">
+          <div className="description">
+            <Editor />
+          </div>
+          <div className="btn-grp-end">
+            <Button title="Add Subtask" classes="small-btn outlined-blu-btn">
+              <TbSubtask />
+            </Button>
+            <Button title="Attach Media" classes="small-btn outlined-blu-btn">
+              <MdOutlinePermMedia />
+            </Button>
+            <Button title="Update" classes="small-btn blu-btn" />
+          </div>
+          <div className="devider" />
+        </div>
+        <div className="extra_task_content">
+          <TaskDetailsExtra title="Due Date" content="No Due Date">
+            <HiOutlineCalendar />
+          </TaskDetailsExtra>
+          <TaskDetailsExtra
+            title="Task Completion Timer"
+            content="No Time Counted"
+          >
+            <MdOutlineTimer />
+          </TaskDetailsExtra>
+          <TaskDetailsExtra title="Assignee" content="No Assignee">
+            <FaRegUser />
+          </TaskDetailsExtra>
+          <TaskHistory />
+        </div>
       </div>
     </section>
   );
