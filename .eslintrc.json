@@ -10,7 +10,15 @@
     "plugin:import/typescript",
     "plugin:prettier/recommended"
   ],
-  "overrides": [],
+  "overrides": [
+    {
+      // enable the rule specifically for TypeScript files
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": ["off"]
+      }
+    }
+  ],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
@@ -53,6 +61,7 @@
         "allowNullableString": true,
         "allowAny": false
       }
-    ]
+    ],
+    "@typescript-eslint/explicit-function-return-type": "off"
   }
 }

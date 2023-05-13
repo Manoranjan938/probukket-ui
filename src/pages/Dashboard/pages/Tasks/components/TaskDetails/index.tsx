@@ -1,4 +1,4 @@
-import { type ReactElement } from "react";
+import { type ReactElement, useEffect, useState } from "react";
 
 import { HiOutlineCalendar, HiUsers } from "react-icons/hi";
 import { IoCopyOutline } from "react-icons/io5";
@@ -17,8 +17,18 @@ import Editor from "src/components/CustomEditor";
 import Button from "src/components/Button";
 import TaskDetailsExtra from "../TaskDetailsExtra";
 import TaskHistory from "../TaskHistory";
+import useGetUsers from "src/hooks/GetDemoUsers/useGetUsers";
 
 const TaskDetails = (): ReactElement => {
+  const [users, setUsers] = useState<[]>([]);
+  const [getUsersList] = useGetUsers();
+
+  useEffect(() => {
+    getUsersList().then((it: any) => {
+      setUsers(it);
+    });
+  }, []);
+
   return (
     <section className="task_full_details_section">
       <div className="task_details_header">
@@ -28,7 +38,7 @@ const TaskDetails = (): ReactElement => {
           </div>
           <div className="task_user_details">
             <span>By</span>
-            <Avatarlist avatarCounts={1} />
+            <Avatarlist avatarCounts={1} data={users} />
             <h4>Sagar Kumar</h4>
             <p>month ago</p>
           </div>

@@ -1,14 +1,16 @@
 import { type ReactElement } from "react";
+import PropTypes from "prop-types";
 
 import "./style.css";
 
 import img0 from "src/assets/avatars/avatar1.png";
 
 interface AvatartListProps {
-  avatarCounts?: number;
+  avatarCounts: number;
+  data: any[];
 }
 
-const Avatarlist = ({ avatarCounts = 0 }: AvatartListProps): ReactElement => {
+const Avatarlist = ({ avatarCounts, data }: AvatartListProps): ReactElement => {
   let content = null;
   if (avatarCounts > 0) {
     content = [...Array(avatarCounts).keys()].map((i: number) => (
@@ -22,10 +24,22 @@ const Avatarlist = ({ avatarCounts = 0 }: AvatartListProps): ReactElement => {
     <div className="widget">
       <div className="avatar-list">
         {content}
-        <button className="avtar plus">+2</button>
+        {data.length > avatarCounts ? (
+          <button className="avtar plus">+{data.length - avatarCounts}</button>
+        ) : null}
       </div>
     </div>
   );
+};
+
+Avatarlist.propTypes = {
+  avatarCounts: PropTypes.number.isRequired,
+  data: PropTypes.array.isRequired,
+};
+
+Avatarlist.defaultProps = {
+  avatarCounts: 0,
+  data: [],
 };
 
 export default Avatarlist;
