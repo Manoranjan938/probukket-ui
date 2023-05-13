@@ -6,6 +6,7 @@ import {
   RouterProvider,
   Routes,
 } from "react-router-dom";
+import Calender from "src/pages/Dashboard/pages/Calenders";
 import CreateProject from "src/pages/CreateProject";
 import Dashboard from "src/pages/Dashboard";
 import ErrorPage from "src/pages/Error/ErrorPage";
@@ -35,6 +36,7 @@ const Routers = (): ReactElement => {
               <Routes>
                 <Route path="home" element={<Home />} />
                 <Route path="tasks" element={<ProjectTasks />} />
+                <Route path="calendar" element={<Calender />} />
               </Routes>
             </Dashboard>
           }

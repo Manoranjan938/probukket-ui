@@ -2,14 +2,18 @@ import { RxDashboard } from "react-icons/rx";
 import {
   BsCalendar2CheckFill,
   BsCalendarCheck,
-  BsFolder,
   BsFolder2Open,
 } from "react-icons/bs";
 import { BiCalendar, BiMessageSquareDetail } from "react-icons/bi";
 import { IoDocumentTextOutline, IoPeopleOutline } from "react-icons/io5";
 import { TbBrandStackshare } from "react-icons/tb";
-import { MdEditNote, MdOutlinePunchClock } from "react-icons/md";
+import {
+  MdEditNote,
+  MdOutlinePunchClock,
+  MdOutlineSupervisedUserCircle,
+} from "react-icons/md";
 import { GoCloudUpload } from "react-icons/go";
+import { CgIfDesign } from "react-icons/cg";
 
 export const sidebarData = [
   {
@@ -25,10 +29,10 @@ export const sidebarData = [
       },
       {
         id: 2,
-        title: "Projects",
-        inActiveIcon: <BsFolder />,
+        title: "Draws",
+        inActiveIcon: <CgIfDesign />,
         activeIcon: <BsFolder2Open />,
-        path: "/dashboard/my-project",
+        path: "/dashboard/draw",
         badge: null,
       },
       {
@@ -99,6 +103,14 @@ export const sidebarData = [
         id: 11,
         title: "My Timers",
         inActiveIcon: <MdOutlinePunchClock />,
+        activeIcon: "",
+        path: "/my-forums",
+        badge: null,
+      },
+      {
+        id: 12,
+        title: "HR Tool",
+        inActiveIcon: <MdOutlineSupervisedUserCircle />,
         activeIcon: "",
         path: "/my-forums",
         badge: null,
