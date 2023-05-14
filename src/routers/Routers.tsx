@@ -36,7 +36,7 @@ const Routers = (): ReactElement => {
               <Routes>
                 <Route path="home" element={<Home />} />
                 <Route path="tasks" element={<ProjectTasks />} />
-                <Route path="calendar" element={<Calender />} />
+                <Route path="calender" element={<Calender />} />
               </Routes>
             </Dashboard>
           }
