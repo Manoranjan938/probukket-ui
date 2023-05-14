@@ -1,9 +1,17 @@
-import { type ReactElement } from "react";
+import { useState, type ReactElement } from "react";
+import getMonth from "src/utils/CalenderGen";
+import CalenderHeader from "./components/CalenderHeader";
+import Months from "./components/Month";
+
+import "./style.css";
 
 const Calender = (): ReactElement => {
+  console.log(getMonth());
+  const [currentMonths] = useState(getMonth());
   return (
     <section className="calender_section">
-      <h1>Hello from calender</h1>
+      <CalenderHeader />
+      <Months month={currentMonths} />
     </section>
   );
 };
