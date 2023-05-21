@@ -1,16 +1,19 @@
-import React, { type ReactElement } from "react";
+import React, { useContext, type ReactElement } from "react";
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi";
 
 import "./style.css";
+import { CalenderContext } from "src/context/CalenderContext";
 
 const CalenderHeader = (): ReactElement => {
+  const { updateNextMonth, updatePrevMonth } = useContext(CalenderContext);
+
   return (
     <section className="calender_header_section">
       <div className="left_header">
-        <div className="calender_header_icon">
+        <div className="calender_header_icon" onClick={updatePrevMonth}>
           <HiOutlineChevronLeft />
         </div>
-        <div className="calender_header_icon">
+        <div className="calender_header_icon" onClick={updateNextMonth}>
           <HiOutlineChevronRight />
         </div>
         <div className="todays_dt">
