@@ -18,6 +18,7 @@ import ProjectTasks from "src/pages/Dashboard/pages/Tasks";
 import Root from "./Root";
 import Signup from "src/pages/Signup";
 import SignupSuccess from "src/pages/SuccessfulScreen";
+import { CalenderContextProvider } from "src/context/CalenderContext";
 
 const Routers = (): ReactElement => {
   const router = createBrowserRouter(
@@ -36,7 +37,14 @@ const Routers = (): ReactElement => {
               <Routes>
                 <Route path="home" element={<Home />} />
                 <Route path="tasks" element={<ProjectTasks />} />
-                <Route path="calender" element={<Calender />} />
+                <Route
+                  path="calender"
+                  element={
+                    <CalenderContextProvider>
+                      <Calender />
+                    </CalenderContextProvider>
+                  }
+                />
               </Routes>
             </Dashboard>
           }
