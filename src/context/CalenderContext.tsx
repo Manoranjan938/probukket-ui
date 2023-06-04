@@ -22,7 +22,7 @@ interface ProviderProps {
 }
 
 const CalenderContextProvider = ({ children }: ProviderProps) => {
-  const [monthIndex, setMonthIndex] = useState(0);
+  const [monthIndex, setMonthIndex] = useState(dayjs().month());
 
   const nextMonth = () => {
     setMonthIndex((prev) => prev + 1);
