@@ -1,0 +1,66 @@
+.task_full_details_section {
+  width: calc(100vw - 500px);
+  padding: 1rem;
+}
+
+.task_details_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task_details_content {
+  display: flex;
+  flex-direction: column;
+}
+
+.task_user_details {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.task_details_icon {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.duplicate,
+.permission {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border: 1px solid var(--deep-gray-color);
+  color: var(--main-color);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.duplicate > span,
+.permission > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border: 1px solid var(--deep-gray-color);
+  color: var(--third-color);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.3rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.task_details_body {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 1.3rem;
+}

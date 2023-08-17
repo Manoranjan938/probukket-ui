@@ -1,0 +1,93 @@
+.board_view_section {
+  width: 100%;
+}
+
+.board_view_header {
+  width: 100%;
+  display: flex;
+  gap: 1.4rem;
+}
+
+.first_board,
+.second_board,
+.third_board,
+.last_board {
+  width: 100%;
+  background: var(--body-color);
+  border-radius: 0.6rem;
+  padding: 0 1rem;
+  min-width: 300px;
+}
+
+.create_btn {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--deep-gray-color);
+  border-radius: 1.2rem;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.task_board {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.board_details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header_title:not(:last-child) {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--container-color);
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+}
+
+.todo {
+  background: linear-gradient(
+    180deg,
+    var(--container-color),
+    var(--main-color)
+  );
+}
+
+.inprogress {
+  background: linear-gradient(
+    180deg,
+    var(--container-color),
+    var(--third-color)
+  );
+}
+
+.completed {
+  background: linear-gradient(
+    180deg,
+    var(--container-color),
+    var(--secondary-color)
+  );
+}
+
+.counter {
+  font-size: 14px;
+  border: 1px solid var(--deep-gray-color);
+  padding: 1px 9px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.board_icon {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+}

@@ -1,0 +1,20 @@
+.drawer_section {
+  width: 100%;
+  z-index: 1000;
+}
+
+.drawer_header {
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--deep-gray-color);
+}
+
+.drawer_close_btn {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  cursor: pointer;
+}

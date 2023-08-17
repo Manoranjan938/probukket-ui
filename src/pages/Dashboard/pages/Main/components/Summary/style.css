@@ -1,0 +1,54 @@
+.summary_card {
+  margin-top: 1rem;
+  background: var(--container-color);
+  border-radius: 1rem;
+  padding: 1rem 1.3rem;
+  width: 100%;
+}
+
+.project_content {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.project_estimate {
+  margin-top: 10px;
+}
+
+.card {
+  display: flex;
+  gap: 0.5rem;
+  height: 100px;
+  align-items: center;
+  border: 1px solid var(--deep-gray-color);
+  border-radius: 0.6rem;
+  padding: 0 1rem;
+}
+
+.card:not(:first-child) {
+  margin-left: 0.8rem;
+}
+
+.project_completion_time {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.hours_card {
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--deep-gray-color);
+  border-radius: 1rem;
+}
+
+.spend_hours {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,33 @@
+.planner_section {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.planer_image_section {
+  width: 100%;
+  height: 800px;
+}
+
+.planer_image_section > img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  mix-blend-mode: multiply;
+}
+
+.planer_content_section > h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--main-color);
+}
+
+.planer_content_section > h2 {
+  font-size: 48px;
+}
+
+.planer_content_section > p {
+  font-size: 18px;
+  margin: 20px 0;
+}
