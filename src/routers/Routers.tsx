@@ -4,7 +4,6 @@ import {
   createRoutesFromElements,
   Route,
   RouterProvider,
-  Routes,
 } from "react-router-dom";
 import ErrorPage from "src/pages/Error/ErrorPage";
 import Forgot from "src/pages/Forgot";
@@ -13,18 +12,12 @@ import Main from "src/pages/Main";
 import Root from "./Root";
 import Signup from "src/pages/Signup";
 import SignupSuccess from "src/pages/SuccessfulScreen";
-import { CalenderContextProvider } from "src/context/CalenderContext";
 import { ErrorBoundary } from "react-error-boundary";
+import DashboardRoutes from "./DashboardRoutes";
+import AdminRoutes from "./AdminRoutes";
 
 const CreateProject = lazy(async () => await import("src/pages/CreateProject"));
 const Dashboard = lazy(async () => await import("src/pages/Dashboard"));
-const Home = lazy(async () => await import("src/pages/Dashboard/pages/Main"));
-const ProjectTasks = lazy(
-  async () => await import("src/pages/Dashboard/pages/Tasks"),
-);
-const Calender = lazy(
-  async () => await import("src/pages/Dashboard/pages/Calenders"),
-);
 
 const Routers = (): ReactElement => {
   const router = createBrowserRouter(
@@ -61,34 +54,24 @@ const Routers = (): ReactElement => {
             >
               <Suspense fallback="loading">
                 <Dashboard>
-                  <Routes>
-                    <Route
-                      path="home"
-                      element={
-                        <Suspense fallback="loading">
-                          <Home />
-                        </Suspense>
-                      }
-                    />
-                    <Route
-                      path="tasks"
-                      element={
-                        <Suspense fallback="loading">
-                          <ProjectTasks />
-                        </Suspense>
-                      }
-                    />
-                    <Route
-                      path="calender"
-                      element={
-                        <Suspense fallback="loading">
-                          <CalenderContextProvider>
-                            <Calender />
-                          </CalenderContextProvider>
-                        </Suspense>
-                      }
-                    />
-                  </Routes>
+                  <DashboardRoutes />
+                </Dashboard>
+              </Suspense>
+            </ErrorBoundary>
+          }
+        />
+        <Route
+          path="admin/*"
+          element={
+            <ErrorBoundary
+              FallbackComponent={ErrorPage}
+              onReset={() => {
+                window.location.replace("/");
+              }}
+            >
+              <Suspense fallback="loading">
+                <Dashboard>
+                  <AdminRoutes />
                 </Dashboard>
               </Suspense>
             </ErrorBoundary>
