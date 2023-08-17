@@ -23,8 +23,7 @@ const Features = (): ReactElement => {
           <div className="feature_content">
             <div className="title">Boards</div>
             <div className="subtitle">
-              You can see completed tasks and information about task, or
-              project.
+              You can see information about task and project.
             </div>
           </div>
         </div>
@@ -46,8 +45,7 @@ const Features = (): ReactElement => {
           <div className="feature_content">
             <div className="title">Messaging</div>
             <div className="subtitle">
-              You can directly send message from your task board to a team
-              member.
+              You can send message from task board to team members.
             </div>
           </div>
         </div>
